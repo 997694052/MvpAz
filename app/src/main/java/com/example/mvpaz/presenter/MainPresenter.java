@@ -20,39 +20,39 @@ public class MainPresenter extends MostBasicPresenter<String, MainActivity, Appl
     }
 
     @Override
-    public void onViewCreate() {
-        super.onViewCreate();
-        Log.i(TAG, "onViewCreate: MainActivityPresenter");
+    public void onViewCreated() {
+        super.onViewCreated();
+        Log.i(TAG, "onViewCreated: MainActivityPresenter");
     }
 
     @Override
-    public void onViewStart() {
-        super.onViewStart();
-        Log.i(TAG, "onViewStart: MainActivityPresenter");
+    public void onViewStarted() {
+        super.onViewStarted();
+        Log.i(TAG, "onViewStarted: MainActivityPresenter");
     }
 
     @Override
-    public void onViewResume() {
-        super.onViewResume();
-        Log.i(TAG, "onViewResume: MainActivityPresenter");
+    public void onViewResumed() {
+        super.onViewResumed();
+        Log.i(TAG, "onViewResumed: MainActivityPresenter");
     }
 
     @Override
-    public void onViewPause() {
-        super.onViewPause();
-        Log.i(TAG, "onViewPause: MainActivityPresenter");
+    public void onViewPaused() {
+        super.onViewPaused();
+        Log.i(TAG, "onViewPaused: MainActivityPresenter");
     }
 
     @Override
-    public void onViewStop() {
-        super.onViewStop();
-        Log.i(TAG, "onViewStop: MainActivityPresenter");
+    public void onViewStopped() {
+        super.onViewStopped();
+        Log.i(TAG, "onViewStopped: MainActivityPresenter");
     }
 
     @Override
-    public void onViewDestroy() {
-        super.onViewDestroy();
-        Log.i(TAG, "onViewDestroy: MainActivityPresenter");
+    public void onViewDestroyed() {
+        super.onViewDestroyed();
+        Log.i(TAG, "onViewDestroyed: MainActivityPresenter");
     }
 
 }

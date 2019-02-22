@@ -30,32 +30,32 @@ public abstract class MostBasicPresenter<M, V extends IView<A, ? extends IPresen
 
 
     @Override
-    public void onViewCreate() {
+    public void onViewCreated() {
 
     }
 
     @Override
-    public void onViewStart() {
+    public void onViewStarted() {
 
     }
 
     @Override
-    public void onViewResume() {
+    public void onViewResumed() {
 
     }
 
     @Override
-    public void onViewPause() {
+    public void onViewPaused() {
 
     }
 
     @Override
-    public void onViewStop() {
+    public void onViewStopped() {
 
     }
 
     @Override
-    public void onViewDestroy() {
+    public void onViewDestroyed() {
 
     }
 

@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 
+import com.z.mvp.base.view.IView;
+
 public class FragmentLifecycleBindCallbacks extends FragmentManager.FragmentLifecycleCallbacks {
 
     private static final String TAG = "AzDebug";
@@ -15,6 +17,10 @@ public class FragmentLifecycleBindCallbacks extends FragmentManager.FragmentLife
     @Override
     public void onFragmentViewCreated(@NonNull FragmentManager fm, @NonNull Fragment f, @NonNull View v, @Nullable Bundle savedInstanceState) {
         super.onFragmentViewCreated(fm, f, v, savedInstanceState);
+        if (f instanceof IView) {
+            ((IView) f).peekPresenter().onViewCreated();
+        }
+
         Log.i(TAG, "onFragmentViewCreated: ");
     }
 

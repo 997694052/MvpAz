@@ -30,7 +30,7 @@ public class ActivityLifecycleBindCallbacks implements Application.ActivityLifec
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewCreate();
+            ((IView) activity).peekPresenter().onViewCreated();
         }
         //绑定fragment生命周期
         if (activity instanceof FragmentActivity && activity instanceof IActivity && ((IActivity) activity).hasFragment()) {
@@ -42,7 +42,7 @@ public class ActivityLifecycleBindCallbacks implements Application.ActivityLifec
     @Override
     public void onActivityStarted(Activity activity) {
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewStart();
+            ((IView) activity).peekPresenter().onViewStarted();
         }
     }
 
@@ -50,7 +50,7 @@ public class ActivityLifecycleBindCallbacks implements Application.ActivityLifec
     public void onActivityResumed(Activity activity) {
         mApplication.setCurrentActivity(activity);
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewResume();
+            ((IView) activity).peekPresenter().onViewResumed();
         }
     }
 
@@ -58,28 +58,26 @@ public class ActivityLifecycleBindCallbacks implements Application.ActivityLifec
     public void onActivityPaused(Activity activity) {
         mApplication.setCurrentActivity(null);
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewPause();
+            ((IView) activity).peekPresenter().onViewPaused();
         }
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewStop();
+            ((IView) activity).peekPresenter().onViewStopped();
         }
     }
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewStop();
-        }
+
     }
 
     @Override
     public void onActivityDestroyed(Activity activity) {
         if (activity instanceof IView && ((IView) activity).peekPresenter() != null) {
-            ((IView) activity).peekPresenter().onViewDestroy();
+            ((IView) activity).peekPresenter().onViewDestroyed();
         }
     }
 

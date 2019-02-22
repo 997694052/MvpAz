@@ -12,16 +12,16 @@ public interface IPresenter<M> {
 
     M createModel();        //创建model
 
-    void onViewCreate();    //与之绑定的View创建
+    void onViewCreated();    //与之绑定的View创建
 
-    void onViewStart();     //与之绑定的View可见或部分可见
+    void onViewStarted();     //与之绑定的View可见或部分可见
 
-    void onViewResume();    //与之绑定的View激活状态,可以交互
+    void onViewResumed();    //与之绑定的View激活状态,可以交互
 
-    void onViewPause();     //与之绑定的View暂停状态,停止交互
+    void onViewPaused();     //与之绑定的View暂停状态,停止交互
 
-    void onViewStop();      //与之绑定的View停止状态,完全不可见
+    void onViewStopped();      //与之绑定的View停止状态,完全不可见
 
-    void onViewDestroy();   //与之绑定的View销毁,应该解除各种引用
+    void onViewDestroyed();   //与之绑定的View销毁,应该解除各种引用
 
 }
