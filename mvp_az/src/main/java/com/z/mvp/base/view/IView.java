@@ -22,10 +22,4 @@ public interface IView<A extends Application, P extends IPresenter> {
 
     A peekApplication();                //获取application
 
-    void showProgress();                //显示加载进度
-
-    void dismissProgress();             //隐藏加载进度
-
-    void showMessage(String message);   //显示一条消息
-
 }

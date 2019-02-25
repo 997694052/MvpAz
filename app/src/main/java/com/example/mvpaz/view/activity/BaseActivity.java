@@ -15,14 +15,15 @@ public abstract class BaseActivity<P extends IPresenter>
         return application instanceof ApplicationMvp ? (ApplicationMvp) application : null;
     }
 
-    @Override
     public void showProgress() {
 
     }
 
-    @Override
     public void dismissProgress() {
 
     }
 
+    public void showMessage(String message) {
+
+    }
 }

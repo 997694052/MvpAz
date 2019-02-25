@@ -49,13 +49,4 @@ public abstract class MostBasicActivity<A extends Application, P extends IPresen
         return false;
     }
 
-    @Override
-    public void showMessage(String message) {
-        if (mToast != null) {
-            mToast.cancel();
-        }
-        mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-        mToast.show();
-    }
-
 }

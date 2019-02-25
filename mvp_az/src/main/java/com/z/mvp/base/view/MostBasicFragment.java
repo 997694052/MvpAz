@@ -1,8 +1,6 @@
 package com.z.mvp.base.view;
 
-import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -54,29 +52,6 @@ public abstract class MostBasicFragment<A extends Application, P extends IPresen
     @Override
     public P peekPresenter() {
         return mPresenter;
-    }
-
-    /**
-     * 这个方法不会总是保证能显示出消息.
-     * 只有在{@link #getActivity()}获取到的activity对象不为null时才会显示消息.
-     * 在fragment的{@link #onAttach(Context)}至{@link #onDetach()}之间调用才会显示.
-     *
-     * @param message 消息.
-     */
-    @Override
-    public void showMessage(String message) {
-        Activity activity = getActivity();
-        if (activity != null) {
-            if (activity instanceof IView) {
-                ((IView) activity).showMessage(message);
-            } else {
-                if (mToast != null) {
-                    mToast.cancel();
-                }
-                mToast = Toast.makeText(activity, message, Toast.LENGTH_SHORT);
-                mToast.show();
-            }
-        }
     }
 
 }
