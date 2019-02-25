@@ -14,7 +14,7 @@ import com.z.mvp.base.presenter.IPresenter;
  * 本类默认实现IActivity,且返回false,即该activity中没有需要绑定生命周期的fragment.
  *
  * @param <A> 应用的Application类型,具体类型在应用中确定.
- * @param <P> view持有的presenter类型,具体类型在IView的最终实现类中确定.
+ * @param <P> view持有的presenter类型,具体类型在IView的最终Activity实现类中确定.
  *            <p>
  *            Created by Az
  *            on 2019/2/22.
@@ -23,7 +23,7 @@ public abstract class MostBasicActivity<A extends Application, P extends IPresen
         extends AppCompatActivity
         implements IView<A, P>, IActivity {
 
-    private P mPresenter;
+    protected P mPresenter;
     protected Toast mToast;
 
     @Override
@@ -36,6 +36,7 @@ public abstract class MostBasicActivity<A extends Application, P extends IPresen
     protected void onDestroy() {
         super.onDestroy();
         mPresenter = null;
+        mToast = null;
     }
 
     @Override
