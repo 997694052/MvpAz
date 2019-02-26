@@ -13,7 +13,7 @@ public class MainPresenter extends BasePresenter<MainModel, MainActivity> {
 
     @Override
     public MainModel createModel() {
-        return null;
+        return new MainModel(mApplication);
     }
 
 }
